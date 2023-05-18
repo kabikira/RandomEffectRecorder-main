@@ -17,15 +17,12 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioPlayerDelegate {
     var audioRecorder: AVAudioRecorder!
     
     var recDate: Date!
-    
 
     var playerNode: AVAudioPlayerNode!
 
     let engine = AVAudioEngine()
     
     var audioPlayer = AVAudioPlayer()
-    
-    //    var sampleRate: Double = 48000
     
     let objectWillChange = PassthroughSubject<AudioRecorder, Never>()
     
@@ -38,35 +35,20 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
     }
 
-    //    let audioSession = AVAudioSession.sharedInstance()
-    //        var sampleRate: Double {
-    //            get {
-    //                do {
-    //                    try audioSession.setActive(true)
-    //                    print(audioSession.sampleRate)
-    //                    return audioSession.sampleRate
-    //                } catch {
-    //                    print("Failed to set audio session active: \(error)")
-    //                    return 44100.0 // default value
-    //                }
-    //            }
-    //        }
-    
-    
+
     func dateToString(dateValue: Date) -> String{
         let df = DateFormatter()
-        //        df.dateFormat = "yyyy/MM/dd HH:mm:ss"
         df.dateStyle = .medium
         df.timeStyle = .medium
         return String(df.string(from: dateValue))
     }
+
     //Audio File Writing Function
     func getAudioFileUrl() -> URL {
         guard let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("File URL get error")
         }
         let audioUrl = paths.appendingPathComponent("\(dateToString(dateValue: recDate)).caf")
-        //        let audioUrl = paths.appendingPathComponent("unnko.caf")
         
         return audioUrl
     }
@@ -80,14 +62,6 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioPlayerDelegate {
         
         do {
             // 入力ノードのフォーマットを取得
-//            let inputNode = engine.inputNode
-//            let inputFormat = inputNode.outputFormat(forBus: 0)
-//
-//            let format = AVAudioFormat(commonFormat: .pcmFormatFloat32  , sampleRate: inputFormat.sampleRate, channels: 1 , interleaved: true)
-//            print(inputFormat.sampleRate)
-//
-//
-//            let audioFile = try AVAudioFile(forWriting: getAudioFileUrl(), settings: format!.settings)
             let inputNode = engine.inputNode
             let inputFormat = inputNode.outputFormat(forBus: 0)
 
@@ -115,13 +89,9 @@ class AudioRecorder: NSObject, ObservableObject, AVAudioPlayerDelegate {
             reverbNode.wetDryMix = Float.random(in: 0...100)
             engine.attach(reverbNode)
             
-            
-            //            let inputNode = engine.inputNode
-            
             var node1: AVAudioNode = delayNode
             var node2: AVAudioNode = reverbNode
             var node3: AVAudioNode = distortionNode
-            
             
             switch number {
             case 0:
