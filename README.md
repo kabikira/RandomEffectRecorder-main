@@ -1,11 +1,13 @@
 # RandomEffectRecorder
-This App is a recorder with random effects.
-# Requirements
-We use SwiftUI so you need to target iOS 14.
-# Contributions
-Issues and PRs are welcome, even for minor improvements and corrections.
-# Features
-It gives a different stimulus to your composition and sampling.
-Distortion, delay, and reverb effect presets and parameters are all set randomly.
-The order in which effects are applied, such as delay -> distortion -> reverb, is also random.
+このアプリはランダムエフェクトのレコーダーです。
+# 必要条件
+iOS 14以上をターゲットにしている必要がある。
+# 特徴
+作曲やサンプリングに違った刺激を与えます。
+ディストーション、ディレイ、リバーブのエフェクトのプリセットとパラメーターは全てランダムに設定されます。
+ディレイ→ディストーション→リバーブといったエフェクトがかかる順番もランダムです。
+# アウトプット
+iPhone8だと44100、iPhone12miniは48000、iPadmini6は48000のようにデバイスごとにマイクのサンプルレートが異なっており､  
+"required condition is false: format.sampleRate == hwFormat.sampleRate"エラーに悩まされたが解消したことをQiitaに投稿しました｡  
+[Qiita記事リンク](https://qiita.com/Imael/items/1f885e901162df949185) 
 
