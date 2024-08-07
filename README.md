@@ -7,7 +7,9 @@ iOS 14以上をターゲットにしている必要がある。
 ディストーション、ディレイ、リバーブのエフェクトのプリセットとパラメーターは全てランダムに設定されます。
 ディレイ→ディストーション→リバーブといったエフェクトがかかる順番もランダムです。
 # アウトプット
-iPhone8だと44100、iPhone12miniは48000、iPadmini6は48000のようにデバイスごとにマイクのサンプルレートが異なっており､  
+- iPhone8だと44100、iPhone12miniは48000、iPadmini6は48000のようにデバイスごとにマイクのサンプルレートが異なっており､  
 "required condition is false: format.sampleRate == hwFormat.sampleRate"エラーに悩まされたが解消したことをQiitaに投稿しました｡  
-[Qiita記事リンク](https://qiita.com/Imael/items/1f885e901162df949185) 
+[Qiita記事リンク](https://qiita.com/Imael/items/1f885e901162df949185)  
+
+- iPhone純正アプリのボイスメモ録音ボタンのUIの再現方法をQittaに投稿しました｡[Qiita記事リンク](https://qiita.com/Imael/items/70db85aed4e0187d96cd)  
 
