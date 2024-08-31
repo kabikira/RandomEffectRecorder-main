@@ -1,5 +1,5 @@
 # RandomEffectRecorder
-このアプリはランダムエフェクトのレコーダーです。  
+ランダムでエフェクトがかかるレコーダーアプリ  
 <img width="150" src="https://github.com/user-attachments/assets/963eea79-e9fd-4209-b388-ac83891a0c3d">
 <img width="150" src="https://github.com/user-attachments/assets/12e2bb63-0f4c-4911-81b0-abedac1803dc">
 <img width="150" src="https://github.com/user-attachments/assets/1fc67d69-128f-45ff-9362-a6d8f323ec8e">
@@ -9,13 +9,21 @@ iPhoneのフォルダの中のこのiPhone内にR.E.Recorderフォルダが作�
 <img width="150" src="https://github.com/user-attachments/assets/51b770e2-9a84-4f9a-bfc7-e2f753e96952">    
 [動作している動画リンク](https://x.com/imael123/status/1662304003416555526)
 
-# 必要条件
-iOS 14以上をターゲットにしている必要がある。
-# 特徴
+## 作成理由
+このレコーダーを使用することによって作曲やサンプリングに自分では制御できないエフェクトがかかることによってアイデアを刺激するために作成。
+
+## 特徴
 作曲やサンプリングに違った刺激を与えます。
 ディストーション、ディレイ、リバーブのエフェクトのプリセットとパラメーターは全てランダムに設定されます。
-ディレイ→ディストーション→リバーブといったエフェクトがかかる順番もランダムです。
-# アウトプット
+ディレイ→ディストーション→リバーブといったエフェクトがかかる順番もランダムです。　　
+
+## 工夫した点
+- AVAudioUnitEffectのノードを繋いで録音しながらエフェクトがかかるように実装
+- 録音したファイルはiPhoneのフォルダ内に保存されるよう実装
+- SwiftUIで作成
+- 録音データをアプリ内のListから再生、削除できるよう実装
+
+## アウトプット
 - iPhone8だと44100、iPhone12miniは48000、iPadmini6は48000のようにデバイスごとにマイクのサンプルレートが異なっており､  
 "required condition is false: format.sampleRate == hwFormat.sampleRate"エラーに悩まされたが解消したことをQiitaに投稿しました｡  
 [Qiita記事リンク](https://qiita.com/Imael/items/1f885e901162df949185)  
